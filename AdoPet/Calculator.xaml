@@ -1,0 +1,55 @@
+﻿<Window x:Class="AdoPet.Calculator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdoPet"
+        mc:Ignorable="d"
+        Title="Calculator" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Source="Pic/dog.png" OpacityMask="Black" Margin="5"/>
+        </Button>
+        <Button Grid.Column="1"  Grid.RowSpan="2" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Source="Pic/cat.png" Margin="5"/>
+        </Button>
+        <Label Content="Pies" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25"/>
+        <Label Content="Kot" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25"/>
+        <Label Content="Waga zwierzaka" Grid.Column="2" Grid.Row="0" FontSize="25" HorizontalAlignment="Center" Foreground="#FFB359E7" FontWeight="Bold" />
+        <TextBox x:Name="txbWeight" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FFB359E7" Width="219" BorderBrush="#FFB359E7"/>
+        <TextBlock x:Name="weightPet" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="120,10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FF79DD38"/>
+        <GroupBox Header="Wiek" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10" BorderBrush="#FFB359E7" Foreground="Black">
+            <StackPanel>
+                <RadioButton x:Name="rbJunior" Margin="5">Junior</RadioButton>
+                <RadioButton x:Name="rbAdult" Margin="5">Dorosły</RadioButton>
+                <RadioButton x:Name="rbSenior" Margin="5">Senior</RadioButton>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Aktywność" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10" BorderBrush="#FFB359E7" >
+            <StackPanel>
+                <RadioButton Margin="5">Bardzo aktywny</RadioButton>
+                <RadioButton Margin="5">Aktywny</RadioButton>
+                <RadioButton Margin="5">Mało aktywny</RadioButton>
+            </StackPanel>
+        </GroupBox>
+        <Button Grid.Column="2" Grid.Row="5" Grid.RowSpan="2" Margin="10" BorderBrush="{x:Null}" Background="{x:Null}" Click="Button_Click">
+            <Image Source="Pic/calculator.png" />
+        </Button>
+        <Label Content="Ilość potrzebnej karmy w gramach" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FFB359E7" FontWeight="Bold"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  x:Name="txbResult" FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,10" Width="200"  Foreground="#FFB359E7" FontWeight="Bold"/>
+    </Grid>
+</Window>

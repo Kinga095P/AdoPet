@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AddPet.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Calculator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Email.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MenuPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PetList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VaccinesPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddPet.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Calculator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Email.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PetList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VaccinesPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

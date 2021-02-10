@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Image\menu.png" />
+    <None Remove="Image\shibainu.jpg" />
+    <None Remove="karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" />
+    <None Remove="Pic\add.png" />
+    <None Remove="Pic\calculator.png" />
+    <None Remove="Pic\cat.png" />
+    <None Remove="Pic\conference.png" />
+    <None Remove="Pic\dog.png" />
+    <None Remove="Pic\first-aid.png" />
+    <None Remove="Pic\Home.png" />
+    <None Remove="Pic\menu.png" />
+    <None Remove="Pic\shiba3.jpg" />
+    <None Remove="Pic\switchoff.png" />
+    <None Remove="Pic\syringe.png" />
+    <None Remove="t-r-photography-TzjMd7i5WQI-unsplash.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\menu.png" />
+    <Resource Include="Image\shibainu.jpg" />
+    <Resource Include="karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" />
+    <Resource Include="Pic\add.png" />
+    <Resource Include="Pic\calculator.png" />
+    <Resource Include="Pic\cat.png" />
+    <Resource Include="Pic\conference.png" />
+    <Resource Include="Pic\dog.png" />
+    <Resource Include="Pic\first-aid.png" />
+    <Resource Include="Pic\Home.png" />
+    <Resource Include="Pic\menu.png" />
+    <Resource Include="Pic\shiba3.jpg" />
+    <Resource Include="Pic\switchoff.png" />
+    <Resource Include="Pic\syringe.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="t-r-photography-TzjMd7i5WQI-unsplash.jpg" />
+  </ItemGroup>
+
+</Project>
