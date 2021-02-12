@@ -38,3 +38,4 @@ C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.b
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.csprojAssemblyReference.cache
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Details.g.cs
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Details.baml
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\App.baml

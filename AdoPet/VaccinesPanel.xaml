@@ -38,12 +38,17 @@
         </Grid>
         <DataGrid x:Name="dgVaccines" ItemsSource="{Binding PetVaccine}" Margin="15">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Nazwa szczepionki" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Data ważności (miesiące)" Binding="{Binding ValidInMonths}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="*"/>
+                <DataGridTextColumn Header="Nazwa szczepionki" Binding="{Binding Name}" Width="4*"/>
+                <DataGridTextColumn Header="Data ważności (miesiące)" Binding="{Binding ValidInMonths}" Width="4*"/>
+                <DataGridTemplateColumn Width="2*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edytuj" Click="btnEdit_Click" Background="#FF520E79" Foreground="White"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnEdit" Grid.Row="2" Grid.Column="1" Content="Edytuj" Margin="15,15,15,15" Background="#FF520E79" Foreground="White" FontSize="16" FontWeight="Bold"/>
-       
     </Grid>
 </Window>

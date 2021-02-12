@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:AdoPet"
              StartupUri="MenuPanel.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="Amatic SC">pack://application:,,,/Font/Fonts/#AmaticSC</FontFamily>
+
+        <Style x:Key="GlobalFont" TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="{StaticResource Amatic SC}"/>
+        </Style>
     </Application.Resources>
 </Application>

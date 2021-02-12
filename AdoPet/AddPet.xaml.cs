@@ -26,10 +26,39 @@ namespace AdoPet
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            
-            DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
-            string query = @"INSERT INTO Animal (Type, Name, Age, Sex, Weight, Activity, Size, Vaccines, Sterilization, ChildFriendly, Trained, AcceptCats, AcceptDogs ) VALUES (@type, @name, @age, @sex, @weight, @activity, @size, @vaccines, @sterilization, @childfriendly, @trained, @acceptcats, @acceptdogs)";
-            List<SqlParameter> sqlParameters = new List<SqlParameter>()
+            try
+
+            {
+                int numbervalidator = 0;
+                if (string.IsNullOrEmpty(txtType.Text))
+                {
+                    MessageBox.Show("Proszę uzupełnić gatunek");
+                }
+                else if (string.IsNullOrEmpty(txtName.Text))
+                {
+                    MessageBox.Show("Proszę uzupełnić imię");
+                }
+                else if (string.IsNullOrEmpty(txtAge.Text) || !int.TryParse(txtAge.Text, out numbervalidator))
+                {
+                    MessageBox.Show("Proszę uzupełnić wiek");
+                }
+                else if (string.IsNullOrEmpty(((ComboBoxItem)cbSex.SelectedItem).Tag.ToString()) || !int.TryParse(((ComboBoxItem)cbSex.SelectedItem).Tag.ToString(), out numbervalidator))
+                {
+                    MessageBox.Show("Proszę wybrać płeć");
+                }
+                else if (string.IsNullOrEmpty(txtWeight.Text) || !int.TryParse(txtWeight.Text, out numbervalidator))
+                {
+                    MessageBox.Show("Proszę wpisać masę ciała");
+                }
+                else if (string.IsNullOrEmpty(((ComboBoxItem)cbActivity.SelectedItem).Tag.ToString()) || !int.TryParse(((ComboBoxItem)cbActivity.SelectedItem).Tag.ToString(), out numbervalidator))
+                {
+                    MessageBox.Show("Proszę wybrać aktywność zwierzaka");
+                }
+                else
+                {
+                    DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
+                    string query = @"INSERT INTO Animal (Type, Name, Age, Sex, Weight, Activity, Size, Vaccines, Sterilization, ChildFriendly, Trained, AcceptCats, AcceptDogs ) VALUES (@type, @name, @age, @sex, @weight, @activity, @size, @vaccines, @sterilization, @childfriendly, @trained, @acceptcats, @acceptdogs)";
+                    List<SqlParameter> sqlParameters = new List<SqlParameter>()
             {
                 new SqlParameter("@type",SqlDbType.NVarChar){Value=txtType.Text},
                 new SqlParameter("@name", SqlDbType.NVarChar){Value=txtName.Text},
@@ -45,11 +74,15 @@ namespace AdoPet
                 new SqlParameter("@acceptcats", SqlDbType.Bit){Value=(bool)cbAcceptCats.IsChecked ? 1:0},
                 new SqlParameter("@acceptdogs", SqlDbType.Bit){Value=(bool)cbAcceptDogs.IsChecked ? 1:0}
             };
-            dataBase.ExecuteQuery(query, sqlParameters);
-            MessageBox.Show("Pomyślnie dodano zwierzę do bazy");
+                    dataBase.ExecuteQuery(query, sqlParameters);
+                    MessageBox.Show("Pomyślnie dodano zwierzę do bazy");
 
-            
-        }
-        
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił nieoczekiwany błąd, przepraszamy");
+            }
+        } 
     }
 }

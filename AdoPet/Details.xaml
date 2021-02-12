@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdoPet"
         mc:Ignorable="d"
-        Title="Details" Height="450" Width="800">
-    <Window.Resources>
+        Title="Details" Height="450" Width="800" Style="{DynamicResource GlobalFont}">
+    <!--<Window.Resources>
         <Style TargetType="{x:Type Window}">
             <Setter Property="FontFamily" Value="Amatic SC"/>
         </Style>
-    </Window.Resources>
+    </Window.Resources>-->
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.55"/>
@@ -30,7 +30,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Content="Szczepienia" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-        <Label Content="Uwagia" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+        <Label Content="Uwagi" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
         <Label Content="Nazwa szczepionki" Grid.Row="2" Grid.Column="0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Amatic SC" />
         <Label Content="Data zaszczepienia" Grid.Row="3" Grid.Column="0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
         <Label Content="Data kolejnego szczepienia" Grid.Row="4" Grid.Column="0" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
