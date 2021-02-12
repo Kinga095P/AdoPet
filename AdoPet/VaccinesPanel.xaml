@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="VaccinesPanel" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.55"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="2*"/>
@@ -18,10 +21,8 @@
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-            
-            </Grid.ColumnDefinitions>
-            
 
+            </Grid.ColumnDefinitions>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -30,28 +31,19 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btnDelete" Content="Usuń" Margin="15,20,15,20" Background="#FFB359E7" Foreground="White" FontSize="14" Click="btnDelete_Click" />
+            <Button x:Name="btnDelete" Content="Usuń" Margin="15,20,15,20" Background="#FF520E79" Foreground="White" FontSize="16" Click="btnDelete_Click" FontWeight="Bold" />
             <TextBox x:Name="txtVaccine" Grid.Row="1" Grid.Column="0" Margin="15,20,15,20" Text="Podaj nazwę szczepionki" BorderBrush="#FFB359E7" />
             <TextBox x:Name="txtMonth" Grid.Column="0" Grid.Row="2" Margin="15,20,15,20" BorderBrush="#FFB359E7" Text="Podaj ważność szczepionki"/>
-            <Button x:Name="btnAddVaccine" Content="Dodaj szczepienie" Grid.Column="1" Grid.Row="3" Margin="15,20,15,20" Foreground="White" BorderBrush="#FFB359E7" Background="#FFB359E7" FontSize="14" Click="btnAddVaccine_Click" />
+            <Button x:Name="btnAddVaccine" Content="Dodaj szczepienie" Grid.Column="1" Grid.Row="3" Margin="15,20,15,20" Foreground="White" BorderBrush="#FFB359E7" Background="#FF520E79" FontSize="16" Click="btnAddVaccine_Click" FontWeight="Bold"/>
         </Grid>
-        <ListBox x:Name="lstVaccines" Grid.Row="0" Grid.Column="0" Margin="20" BorderBrush="#FFB359E7" ItemsSource="{Binding}" MouseDoubleClick="lstVaccines_MouseDoubleClick">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding ID}" Visibility="Hidden"/>
-                        <TextBlock Grid.Column="1"  Text="{Binding Name}"/>
-                        <TextBlock Grid.Column="2" Text="{Binding ValidInMonths}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Button x:Name="btnEdit" Grid.Row="2" Grid.Column="1" Content="Edytuj" Margin="15,15,15,15" Background="#FFB359E7" Foreground="White" FontSize="14"/>
+        <DataGrid x:Name="dgVaccines" ItemsSource="{Binding PetVaccine}" Margin="15">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Nazwa szczepionki" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Data ważności (miesiące)" Binding="{Binding ValidInMonths}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnEdit" Grid.Row="2" Grid.Column="1" Content="Edytuj" Margin="15,15,15,15" Background="#FF520E79" Foreground="White" FontSize="16" FontWeight="Bold"/>
        
     </Grid>
 </Window>

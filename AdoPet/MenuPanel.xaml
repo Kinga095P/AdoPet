@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdoPet"
         mc:Ignorable="d"
-        Title="MenuPanel" Height="600" Width="800" ResizeMode="NoResize" Topmost="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+        Title="MenuPanel"  Height="600" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Window.Resources>
         <ImageBrush x:Key="tb_mouse_over" ImageSource="/Pic/menu.png"/>
         <Style x:Key="font_style" TargetType="TextBlock">
@@ -126,16 +126,7 @@
                 <Grid.Background>
                     <ImageBrush x:Name="img_bg"  ImageSource="/Pic/shiba3.jpg"  Stretch="Uniform"/>
                 </Grid.Background>
-                <Calendar HorizontalAlignment="Left" Margin="579,376,0,0" VerticalAlignment="Top" BorderBrush="#FF872BA2">
-                    <Calendar.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE4EAF0"/>
-                            <GradientStop Color="#FFECF0F4" Offset="0.16"/>
-                            <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
-                            <GradientStop Color="#FFDE81FF" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Calendar.Background>
-                </Calendar>
+                <Calendar HorizontalAlignment="Left" Margin="579,376,0,0" VerticalAlignment="Top" BorderBrush="#FF872BA2" Background="White"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -294,6 +285,15 @@
                             </StackPanel>
                             <ListViewItem.ToolTip>
                                 <ToolTip x:Name="tt_petList" Content="Lista zwierząt" Style="{StaticResource tt_style}"/>
+                            </ListViewItem.ToolTip>
+                        </ListViewItem>
+                        <ListViewItem HorizontalAlignment="Left" Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
+                            <StackPanel Orientation="Horizontal" Width="230">
+                                <Image Source="Pic/news.png" Width="50" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp_5" />
+                                <TextBlock Text="Formularz adopcyjny" Margin="25,0,0,0" Style="{StaticResource font_style}"/>
+                            </StackPanel>
+                            <ListViewItem.ToolTip>
+                                <ToolTip x:Name="tt_AdoptionForm" Content="Formularz adopcyjny" Style="{StaticResource tt_style}" />
                             </ListViewItem.ToolTip>
                         </ListViewItem>
                         <ListView.ItemContainerStyle>

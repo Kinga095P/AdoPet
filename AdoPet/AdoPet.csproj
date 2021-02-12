@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Font\FONTS\AmaticSC-Regular.ttf" />
     <None Remove="Image\menu.png" />
     <None Remove="Image\shibainu.jpg" />
     <None Remove="karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" />
     <None Remove="Pic\add.png" />
+    <None Remove="Pic\bluegradient.jpg" />
     <None Remove="Pic\calculator.png" />
     <None Remove="Pic\cat.png" />
     <None Remove="Pic\conference.png" />
@@ -18,6 +20,8 @@
     <None Remove="Pic\first-aid.png" />
     <None Remove="Pic\Home.png" />
     <None Remove="Pic\menu.png" />
+    <None Remove="Pic\news.png" />
+    <None Remove="Pic\purplegradient.jpg" />
     <None Remove="Pic\shiba3.jpg" />
     <None Remove="Pic\switchoff.png" />
     <None Remove="Pic\syringe.png" />
@@ -29,10 +33,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Font\FONTS\AmaticSC-Regular.ttf" />
     <Resource Include="Image\menu.png" />
     <Resource Include="Image\shibainu.jpg" />
     <Resource Include="karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" />
     <Resource Include="Pic\add.png" />
+    <Resource Include="Pic\bluegradient.jpg" />
     <Resource Include="Pic\calculator.png" />
     <Resource Include="Pic\cat.png" />
     <Resource Include="Pic\conference.png" />
@@ -40,6 +46,8 @@
     <Resource Include="Pic\first-aid.png" />
     <Resource Include="Pic\Home.png" />
     <Resource Include="Pic\menu.png" />
+    <Resource Include="Pic\news.png" />
+    <Resource Include="Pic\purplegradient.jpg" />
     <Resource Include="Pic\shiba3.jpg" />
     <Resource Include="Pic\switchoff.png" />
     <Resource Include="Pic\syringe.png">

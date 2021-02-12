@@ -33,4 +33,8 @@ C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.csproj.
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.dll
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.pdb
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.genruntimeconfig.cache
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.g.cs
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.baml
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.csprojAssemblyReference.cache
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Details.g.cs
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Details.baml

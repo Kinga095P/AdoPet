@@ -8,16 +8,17 @@
         Title="PetList" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Pic/galaxy.jpg"/>
+            <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.6"/>
         </Grid.Background>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" ItemsSource="{Binding Animal}">
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding Animal}" Margin="20" Padding="10" CanUserAddRows="False" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
                 <DataGridTextColumn Header="Typ" Binding="{Binding Type}"/>
@@ -27,18 +28,20 @@
                 <DataGridTextColumn Header="Waga" Binding="{Binding Weight}"/>
                 <DataGridTextColumn Header="Aktywność" Binding="{Binding Activity}"/>
                 <DataGridTextColumn Header="Wielkość" Binding="{Binding Size}"/>
-                <DataGridCheckBoxColumn Header="Szczepienia" Binding="{Binding Vaccines}"/>
+                <DataGridCheckBoxColumn IsReadOnly="True" Header="Szczepienia" Binding="{Binding Vaccines}"/>
                 <DataGridCheckBoxColumn Header="Sterylizacja" Binding="{Binding Sterylization}"/>
                 <DataGridCheckBoxColumn Header="PrzyjaznyDzieciom" Binding="{Binding ChildFriendly}"/>
                 <DataGridCheckBoxColumn Header="Szkolony" Binding="{Binding Trained}"/>
                 <DataGridCheckBoxColumn Header="AkceptujeKoty" Binding="{Binding AcceptCats}"/>
                 <DataGridCheckBoxColumn Header="AkceptujePsy" Binding="{Binding AcceptDogs}" >
-                    
+
                 </DataGridCheckBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAdd" Content="Dodaj zwierzę do bazy" Margin="10,15,568,15"  Foreground="#FFF7F7F7" Background="#FFB359E7" FontSize="16" FontWeight="Bold" Grid.Row="1" Click="btnAdd_Click"/>
-        <Button x:Name="btnEdit" Content="Edytuj zwierzę" Margin="273,15,297,15" Grid.Row="1"  Foreground="#FFF7F7F7" Background="#FFB359E7" FontSize="16" FontWeight="Bold" Click="btnEdit_Click"/>
-        <Button x:Name="btnDelete" Content="Usuń zwierzę z bazy" Margin="545,15,10,15"  Foreground="#FFF7F7F7" Background="#FFB359E7" FontSize="16" FontWeight="Bold" Grid.Row="1" Click="btnDelete_Click"/>
+        <Button x:Name="btnAdd" Content="Dodaj zwierzę do bazy" Margin="10,15,568,15"  Foreground="#FFF7F7F7" FontSize="16" FontWeight="Bold" Grid.Row="2" Click="btnAdd_Click" Background="#FF520E79"/>
+        <Button x:Name="btnEdit" Content="Edytuj zwierzę" Margin="273,15,297,15" Grid.Row="2"  Foreground="#FFF7F7F7" Background="#FF520E79" FontSize="16" FontWeight="Bold" Click="btnEdit_Click"/>
+        <Button x:Name="btnDelete" Content="Usuń zwierzę z bazy" Margin="545,15,10,15"  Foreground="#FFF7F7F7" Background="#FF520E79" FontSize="16" FontWeight="Bold" Grid.Row="2" Click="btnDelete_Click"/>
+        <TextBox x:Name="txtSearch" Grid.Row="0" FontSize="14" Margin="511,15,15,15" Background="#FFF6F6F6" TextChanged="txtSearch_TextChanged" Text="Wpisz zwierzę jakie chcesz wyszukać" />
+        <Button x:Name="btnPrint" Content="Drukuj listę zwierząt" Grid.Row="0"  HorizontalAlignment="Left" Margin="20,20,0,20" Width="134" Click="btnPrint_Click" BorderBrush="#FF520E79" Background="#FF520E79" Foreground="White"/>
     </Grid>
 </Window>

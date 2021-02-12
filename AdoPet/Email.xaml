@@ -7,23 +7,25 @@
         mc:Ignorable="d"
         Title="Email" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.6"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Do" Grid.Column="0" Grid.Row="0" FontSize="20" Margin="2" Foreground="#FFB359E7" VerticalAlignment="Center"/>
+        <Label Content="Do" Grid.Column="0" Grid.Row="0" FontSize="20" Margin="2" Foreground="White" VerticalAlignment="Center" FontWeight="Bold"/>
         <TextBox x:Name="txtAddres" Grid.Row="0" Grid.Column="1" Margin="10" Foreground="#FFB359E7"/>
-        <Label Content="Temat" Grid.Column="0" Grid.Row="1" FontSize="20" Margin="2" Foreground="#FFB359E7" VerticalAlignment="Center"/>
+        <Label Content="Temat" Grid.Column="0" Grid.Row="1" FontSize="20" Margin="2" Foreground="White" VerticalAlignment="Center" FontWeight="Bold"/>
         <Image Source="Pic/send-mail.png" Grid.Row="2" Grid.Column="0" Margin="30"/>
         <TextBox x:Name="txtTopic" Grid.Row="1" Grid.Column="1" Margin="10" Foreground="#FFB359E7"/>
         <TextBox x:Name="txtMessage" Grid.Row="2" Grid.Column="1" Margin="10"/>
-        <Button x:Name="btnSend" Grid.Column="1" Grid.Row="3" Content="Wyślij wiadomość" Margin="30,5,300,5" FontSize="16" Click="btnSend_Click" Background="#FFB359E7" Foreground="White"/>
+        <Button x:Name="btnSend" Grid.Column="1" Grid.Row="3" Content="Wyślij wiadomość" Margin="30,5,300,5" FontSize="16" Click="btnSend_Click" Background="#FF520E79" Foreground="White"/>
     </Grid>
 </Window>

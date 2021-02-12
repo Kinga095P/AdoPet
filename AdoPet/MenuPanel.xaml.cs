@@ -32,6 +32,7 @@ namespace AdoPet
                 tt_vaccine.Visibility = Visibility.Collapsed;
                 tt_email.Visibility = Visibility.Collapsed;
                 tt_petList.Visibility = Visibility.Collapsed;
+                tt_AdoptionForm.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -41,6 +42,7 @@ namespace AdoPet
                 tt_vaccine.Visibility = Visibility.Visible;
                 tt_email.Visibility = Visibility.Visible;
                 tt_petList.Visibility = Visibility.Visible;
+                tt_AdoptionForm.Visibility = Visibility.Visible;
             }
         }
         private void Tg_Btn_Unchecked(object sender, RoutedEventArgs e)
@@ -67,35 +69,50 @@ namespace AdoPet
         {
             Calculator calculator = new Calculator();
             calculator.Owner = this;
-            calculator.ShowDialog();
+            calculator.Show();
         }
 
         private void Image_PreviewMouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
         {
             AddPet addPet = new AddPet();
             addPet.Owner = this;
-            addPet.ShowDialog();
+            addPet.Show();
         }
 
         private void Image_PreviewMouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
         {
             VaccinesPanel vaccine = new VaccinesPanel();
             vaccine.Owner = this;
-            vaccine.ShowDialog();
+            vaccine.Show();
         }
 
         private void Image_PreviewMouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
         {
             Email email = new Email();
             email.Owner = this;
-            email.ShowDialog();
+            email.Show();
         }
 
         private void Image_PreviewMouseLeftButtonUp_4(object sender, MouseButtonEventArgs e)
         {
             PetList petList = new PetList();
             petList.Owner = this;
-            petList.ShowDialog();
+            petList.Show();
+        }
+
+        private void Image_PreviewMouseLeftButtonUp_5(object sender, MouseButtonEventArgs e)
+        {
+            AdoptionForm adoptionForm = new AdoptionForm();
+            adoptionForm.Owner = this;
+            adoptionForm.Show();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+
+            // Begin dragging the window
+            this.DragMove();
         }
     }
 }

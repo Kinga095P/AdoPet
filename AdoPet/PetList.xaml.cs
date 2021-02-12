@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
@@ -19,6 +20,8 @@ namespace AdoPet
     /// </summary>
     public partial class PetList : Window
     {
+        private string _connectionString;
+
         public PetList()
         {
             InitializeComponent();
@@ -31,11 +34,11 @@ namespace AdoPet
             e.Column.Visibility = Visibility.Collapsed;
         }
 
-        public List<Animal> LoadAnimals()
+        public List<Animal> LoadAnimals(string query= "SELECT * FROM Animal", List<SqlParameter> parameters=null)
         {
             List<Animal> animalList = new List<Animal>();
             DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
-            var dane = dataBase.SelectQuery("SELECT * FROM Animal");
+            var dane = dataBase.SelectQuery(query,parameters);
             foreach (DataRow dr in dane)
             {
                 Animal animal = new Animal(); 
@@ -106,11 +109,32 @@ namespace AdoPet
             List<SqlParameter> sqlParameters = new List<SqlParameter>()
             {
                 new SqlParameter("@id", SqlDbType.Int){Value=animal.ID}
-
             };
             dataBase.ExecuteQuery(query, sqlParameters);
             refreshAnimals();
             MessageBox.Show("Usunięto zwierzę z bazy");
         }
+       
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchQuery = "SELECT * FROM Animal WHERE LOWER(Name) LIKE @name";
+            List<SqlParameter> sqlParameters = new List<SqlParameter>()
+        {
+            new SqlParameter("@name", SqlDbType.NVarChar){Value= "%" + txtSearch.Text.ToLower() + "%"}
+        };
+            List<Animal> searchedAnimals = LoadAnimals(searchQuery, sqlParameters);
+            dataGrid.ItemsSource = searchedAnimals;
+
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(dataGrid, "My First Print Job");
+            }
+        }
     }
+
 }

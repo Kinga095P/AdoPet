@@ -10,7 +10,13 @@
     <Compile Update="AddPet.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AdoptionForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Calculator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Details.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Email.xaml.cs">
@@ -30,7 +36,13 @@
     <Page Update="AddPet.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="AdoptionForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Calculator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Details.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Email.xaml">

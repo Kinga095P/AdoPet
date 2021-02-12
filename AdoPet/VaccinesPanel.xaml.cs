@@ -24,8 +24,13 @@ namespace AdoPet
         {
             InitializeComponent();
             RefreshVaccines();
-        }
+            dgVaccines.AutoGeneratingColumn += dataGrid_AutoGeneratingColumn;
 
+        }
+        private void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            e.Column.Visibility = Visibility.Collapsed;
+        }
         public List<PetVaccine> LoadVaccines()
         {
             List<PetVaccine> vaccineList = new List<PetVaccine>();
@@ -44,7 +49,7 @@ namespace AdoPet
         public void RefreshVaccines()
         {
             List<PetVaccine> refreshedList = LoadVaccines();
-            lstVaccines.ItemsSource = refreshedList;
+            dgVaccines.ItemsSource = refreshedList;
 
         }
         private void btnAddVaccine_Click(object sender, RoutedEventArgs e)
@@ -62,7 +67,7 @@ namespace AdoPet
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            PetVaccine pv = (PetVaccine)lstVaccines.SelectedItem;
+            PetVaccine pv = (PetVaccine)dgVaccines.SelectedItem;
             DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
             string query = @"DELETE FROM Vaccines WHERE ID=@id";
             List<SqlParameter> sqlParameters = new List<SqlParameter>()
@@ -79,7 +84,7 @@ namespace AdoPet
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            PetVaccine pv = (PetVaccine)lstVaccines.SelectedItem;
+            PetVaccine pv = (PetVaccine)dgVaccines.SelectedItem;
             DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
             string query = @"UPDATE Vaccines SET Name=@name, ValidInMonths=@validinmonths WHERE ID=@id";
             List<SqlParameter> sqlParameters = new List<SqlParameter>()
@@ -95,7 +100,7 @@ namespace AdoPet
 
         private void lstVaccines_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            PetVaccine pv = (PetVaccine)lstVaccines.SelectedItem;
+            PetVaccine pv = (PetVaccine)dgVaccines.SelectedItem;
             txtVaccine.Text = pv.Name;
             txtMonth.Text = pv.ValidInMonths.ToString();
             btnAddVaccine.Content = "Edytuj szczepienie";

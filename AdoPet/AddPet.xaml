@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:AdoPet"
         mc:Ignorable="d"
         Title="AddPet" Height="450" Width="800">
-    <Grid >
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.6"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -24,23 +27,30 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
-        <Label Grid.Row="1" Grid.Column="0" Content="Gatunek" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFB359E7"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="Imię" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFB359E7"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="Wiek" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFB359E7"/>
-        <Label Grid.Row="4" Grid.Column="0" Content="Płeć" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFB359E7"/>
-        <Label Grid.Row="5" Grid.Column="0" Content="Aktywność" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFB359E7"/>
-        <Label Grid.Row="6" Grid.Column="0" Content="Masa ciała" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFB359E7"/>
-        <Label Grid.Row="6" Grid.Column="0" Content="Wielkość zwierzaka" Margin="119,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="#FFB359E7"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Gatunek" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#FF520E79"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Imię" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#FF520E79"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Wiek" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#FF520E79"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Płeć" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#FF520E79"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Aktywność" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#FF520E79"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Masa ciała" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#FF520E79"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Wielkość zwierzaka" Margin="119,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Grid.RowSpan="2" FontWeight="Bold" Foreground="#FF520E79"/>
         <Label Content="Mały      Średni      Duży" Grid.Row="9" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Margin="85,0,0,0" Foreground="#FFB359E7"/>
         <Slider x:Name="sizePet" Margin="100,0,100,0" Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="0" Minimum="0" Maximum="2" Value="0" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="24" IsSnapToTickEnabled="True"/>
-        <Button x:Name="btnAdd" Content="Dodaj zwierzę" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="80,10,80,10" Padding="10" Foreground="#FFF7F7F7" Background="#FFB359E7" FontSize="16" FontWeight="Bold" Click="btnAdd_Click"/>
+        <Button x:Name="btnAdd" Content="Dodaj zwierzę" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="80,15,80,15" Padding="10" Foreground="#FFF7F7F7" FontSize="16" FontWeight="Bold" Click="btnAdd_Click" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5">
+            <Button.Background>
+                <ImageBrush ImageSource="/Pic/bluegradient.jpg"/>
+            </Button.Background>
+        </Button>
         <TextBox x:Name="txtType" Grid.Column="1" Grid.Row="1" Margin="5" BorderBrush="#FFB359E7"/>
         <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="2" Margin="5" BorderBrush="#FFB359E7"/>
         <TextBox x:Name="txtAge" Grid.Column="1" Grid.Row="3" Margin="5" BorderBrush="#FFB359E7"/>
         <TextBox x:Name="txtWeight" Grid.Column="1" Grid.Row="6" Margin="5" BorderBrush="#FFB359E7"/>
-        <Label Content="Dodaj zwierzę do bazy" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#FFB359E7"/>
+        <Label Content="Dodaj zwierzę do bazy" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#FF520E79">
+            <Label.Background>
+                <ImageBrush/>
+            </Label.Background>
+        </Label>
         <TextBox  Grid.Row="4" Grid.Column="3" BorderThickness="0"  x:Name="txbWeight" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
         <ComboBox x:Name="cbSex" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="190" Height="34">
             <ComboBoxItem x:Name="cbMale" Content="Samiec" Tag="0"/>
@@ -51,14 +61,14 @@
             <ComboBoxItem Content="Średnia" Tag="1"/>
             <ComboBoxItem Content="Duża" Tag="2"/>
         </ComboBox>
-        <GroupBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="5" Header="Inne" FontSize="18" Foreground="Black" BorderBrush="#FFB359E7" BorderThickness="2" OpacityMask="Black">
+        <GroupBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="5" Header="Inne" FontSize="18" Foreground="#FF520E79" BorderBrush="#FFB359E7" BorderThickness="2">
             <StackPanel>
-                <CheckBox x:Name="cbVaccines" Content="Szczepienia"/>
-                <CheckBox x:Name="cbSterilization" Content="Sterylizacja/Kastracja"/>
-                <CheckBox x:Name="cbChildFriendly" Content="Przyjazny dzieciom"/>
-                <CheckBox x:Name="cbTrained" Content="Szkolony"/>
-                <CheckBox x:Name="cbAcceptDogs" Content="Akceptuje psy"/>
-                <CheckBox x:Name="cbAcceptCats" Content="Akceptuje koty"/>
+                <CheckBox x:Name="cbVaccines" Content="Szczepienia" Foreground="White"/>
+                <CheckBox x:Name="cbSterilization" Content="Sterylizacja/Kastracja" Foreground="#FFFAFAFA"/>
+                <CheckBox x:Name="cbChildFriendly" Content="Przyjazny dzieciom" Foreground="White"/>
+                <CheckBox x:Name="cbTrained" Content="Szkolony" Foreground="White"/>
+                <CheckBox x:Name="cbAcceptDogs" Content="Akceptuje psy" Foreground="White"/>
+                <CheckBox x:Name="cbAcceptCats" Content="Akceptuje koty" Foreground="White"/>
             </StackPanel>
         </GroupBox>
 
