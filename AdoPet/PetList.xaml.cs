@@ -88,7 +88,6 @@ namespace AdoPet
                 new SqlParameter("@weight", SqlDbType.Int) { Value = animal.Weight},
                 new SqlParameter("@activity", SqlDbType.Int) { Value = animal.Activity},
                 new SqlParameter("@size", SqlDbType.Int) { Value = animal.Size},
-                new SqlParameter("@sex", SqlDbType.Int) { Value = animal.Sex},
                 new SqlParameter("@vaccines", SqlDbType.Bit) { Value = animal.Vaccines},
                 new SqlParameter("@sterilization", SqlDbType.Bit) { Value = animal.Sterilization},
                 new SqlParameter("@childfriendly", SqlDbType.Bit) { Value = animal.ChildFriendly},
@@ -134,6 +133,20 @@ namespace AdoPet
             {
                 printDialog.PrintVisual(dataGrid, "My First Print Job");
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddVaccine addVaccine = new AddVaccine();
+            addVaccine.Owner = this;
+            addVaccine.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AdoptionDetails adoptionDetails = new AdoptionDetails();
+            adoptionDetails.Owner = this;
+            adoptionDetails.Show();
         }
     }
 

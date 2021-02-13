@@ -26,7 +26,6 @@ namespace AdoPet
         {
             if(Tg_Btn.IsChecked==true)
             {
-                
                 tt_add.Visibility = Visibility.Collapsed;
                 tt_calculator.Visibility = Visibility.Collapsed;
                 tt_vaccine.Visibility = Visibility.Collapsed;
@@ -36,7 +35,7 @@ namespace AdoPet
             }
             else
             {
-                
+
                 tt_add.Visibility = Visibility.Visible;
                 tt_calculator.Visibility = Visibility.Visible;
                 tt_vaccine.Visibility = Visibility.Visible;
@@ -110,8 +109,6 @@ namespace AdoPet
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
-
-            // Begin dragging the window
             this.DragMove();
         }
     }

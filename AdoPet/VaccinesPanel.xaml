@@ -6,6 +6,22 @@
         xmlns:local="clr-namespace:AdoPet"
         mc:Ignorable="d"
         Title="VaccinesPanel" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.55"/>
@@ -32,8 +48,37 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button x:Name="btnDelete" Content="Usuń" Margin="15,20,15,20" Background="#FF520E79" Foreground="White" FontSize="16" Click="btnDelete_Click" FontWeight="Bold" />
-            <TextBox x:Name="txtVaccine" Grid.Row="1" Grid.Column="0" Margin="15,20,15,20" Text="Podaj nazwę szczepionki" BorderBrush="#FFB359E7" />
-            <TextBox x:Name="txtMonth" Grid.Column="0" Grid.Row="2" Margin="15,20,15,20" BorderBrush="#FFB359E7" Text="Podaj ważność szczepionki"/>
+            <Grid Grid.Row="1" Grid.Column="0" >
+                <TextBox VerticalContentAlignment="Center" x:Name="txtVaccine"  Margin="15,20,15,20" BorderBrush="#FFB359E7"/>
+                <TextBlock IsHitTestVisible="False" Text="Podaj nazwę szczepionki" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="DarkGray">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=txtVaccine}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0" >
+                <TextBox x:Name="txtMonth" Grid.Column="0" Grid.Row="2" Margin="15,20,15,20" BorderBrush="#FFB359E7"/>
+                <TextBlock IsHitTestVisible="False" Text="Podaj ważność szczepionki w miesiącach" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="DarkGray">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=txtMonth}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+            
             <Button x:Name="btnAddVaccine" Content="Dodaj szczepienie" Grid.Column="1" Grid.Row="3" Margin="15,20,15,20" Foreground="White" BorderBrush="#FFB359E7" Background="#FF520E79" FontSize="16" Click="btnAddVaccine_Click" FontWeight="Bold"/>
         </Grid>
         <DataGrid x:Name="dgVaccines" ItemsSource="{Binding PetVaccine}" Margin="15">
@@ -44,7 +89,7 @@
                 <DataGridTemplateColumn Width="2*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edytuj" Click="btnEdit_Click" Background="#FF520E79" Foreground="White"/>
+                            <Button x:Name="btnEdit" Content="Edytuj" Click="btnEdit_Click" Background="#FF520E79" Foreground="White"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

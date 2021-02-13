@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <None Remove="Font\FONTS\AmaticSC-Regular.ttf" />
-    <None Remove="Image\menu.png" />
-    <None Remove="Image\shibainu.jpg" />
     <None Remove="karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" />
     <None Remove="Pic\add.png" />
     <None Remove="Pic\bluegradient.jpg" />
@@ -22,10 +20,10 @@
     <None Remove="Pic\menu.png" />
     <None Remove="Pic\news.png" />
     <None Remove="Pic\purplegradient.jpg" />
+    <None Remove="Pic\send-mail.png" />
     <None Remove="Pic\shiba3.jpg" />
     <None Remove="Pic\switchoff.png" />
     <None Remove="Pic\syringe.png" />
-    <None Remove="t-r-photography-TzjMd7i5WQI-unsplash.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,8 +32,6 @@
 
   <ItemGroup>
     <Resource Include="Font\FONTS\AmaticSC-Regular.ttf" />
-    <Resource Include="Image\menu.png" />
-    <Resource Include="Image\shibainu.jpg" />
     <Resource Include="karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" />
     <Resource Include="Pic\add.png" />
     <Resource Include="Pic\bluegradient.jpg" />
@@ -48,12 +44,12 @@
     <Resource Include="Pic\menu.png" />
     <Resource Include="Pic\news.png" />
     <Resource Include="Pic\purplegradient.jpg" />
+    <Resource Include="Pic\send-mail.png" />
     <Resource Include="Pic\shiba3.jpg" />
     <Resource Include="Pic\switchoff.png" />
     <Resource Include="Pic\syringe.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
-    <Resource Include="t-r-photography-TzjMd7i5WQI-unsplash.jpg" />
   </ItemGroup>
 
 </Project>

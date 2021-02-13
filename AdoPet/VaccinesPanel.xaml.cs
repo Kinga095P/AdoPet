@@ -20,6 +20,7 @@ namespace AdoPet
     /// </summary>
     public partial class VaccinesPanel : Window
     {
+        
         public VaccinesPanel()
         {
             InitializeComponent();
@@ -91,7 +92,7 @@ namespace AdoPet
             {
                 new SqlParameter("@id", SqlDbType.Int){Value=pv.ID},
                 new SqlParameter("@name", SqlDbType.NVarChar) { Value = txtVaccine.Text},
-                new SqlParameter("@validinmonths", SqlDbType.Int) { Value = txtMonth.Text}
+                new SqlParameter("@validinmonths", SqlDbType.Int) { Value = int.Parse(txtMonth.Text)}
 
             };
             dataBase.ExecuteQuery(query, sqlParameters);
@@ -105,5 +106,6 @@ namespace AdoPet
             txtMonth.Text = pv.ValidInMonths.ToString();
             btnAddVaccine.Content = "Edytuj szczepienie";
         }
+
     }
 }

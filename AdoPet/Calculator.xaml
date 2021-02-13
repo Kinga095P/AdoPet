@@ -6,6 +6,22 @@
         xmlns:local="clr-namespace:AdoPet"
         mc:Ignorable="d"
         Title="Calculator" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,17 +37,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}">
             <Image Source="Pic/dog.png" OpacityMask="Black" Margin="5"/>
         </Button>
-        <Button Grid.Column="1"  Grid.RowSpan="2" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Source="Pic/cat.png" Margin="5"/>
-        </Button>
-        <Label Content="Pies" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25"/>
-        <Label Content="Kot" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25"/>
+        <Button Grid.Column="1"  Grid.RowSpan="2" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Label Content="Pies" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25"/>
         <Label Content="Waga zwierzaka" Grid.Column="2" Grid.Row="0" FontSize="25" HorizontalAlignment="Center" Foreground="#FFB359E7" FontWeight="Bold" />
         <TextBox x:Name="txbWeight" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FFB359E7" Width="219" BorderBrush="#FFB359E7"/>
-        <TextBlock x:Name="weightPet" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="120,10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FF79DD38"/>
         <GroupBox Header="Wiek" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10" BorderBrush="#FFB359E7" Foreground="Black">
             <StackPanel>
                 <RadioButton x:Name="rbJunior" Margin="5">Junior</RadioButton>

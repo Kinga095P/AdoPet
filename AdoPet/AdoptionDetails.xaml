@@ -1,0 +1,36 @@
+﻿<Window x:Class="AdoPet.AdoptionDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdoPet"
+        mc:Ignorable="d"
+        Title="AdoptionDetails" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.6"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Szczegóły dotyczące adopcji" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="txbPetName" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="White" FontWeight="Bold"/>
+        <DataGrid x:Name="dataGridDetails" Grid.Row="1" Grid.ColumnSpan="2" Margin="60,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Data adopcji" Binding="{Binding DateAdoption}"/>
+                <DataGridTextColumn Header="Imię" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Surrname}"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding Address}" />
+                <DataGridTextColumn Header="Telefon" Binding="{Binding PhoneNumber}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Zamknij szczegóły" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="200,15,200,15" Click="Button_Click" Background="#FF520E79" Foreground="White" FontSize="16" FontWeight="Bold"/>
+    </Grid>
+</Window>

@@ -41,6 +41,8 @@ namespace AdoPet
             };
             dataBase.ExecuteQuery(query, sqlParameters);
             MessageBox.Show("Pomyślnie dodano zwierzę do bazy");
+
+           
         }
     }
 }

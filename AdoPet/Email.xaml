@@ -6,6 +6,22 @@
         xmlns:local="clr-namespace:AdoPet"
         mc:Ignorable="d"
         Title="Email" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.6"/>
@@ -20,9 +36,9 @@
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Do" Grid.Column="0" Grid.Row="0" FontSize="20" Margin="2" Foreground="White" VerticalAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Do" Grid.Column="0" Grid.Row="0" FontSize="20" Margin="2" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
         <TextBox x:Name="txtAddres" Grid.Row="0" Grid.Column="1" Margin="10" Foreground="#FFB359E7"/>
-        <Label Content="Temat" Grid.Column="0" Grid.Row="1" FontSize="20" Margin="2" Foreground="White" VerticalAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Temat" Grid.Column="0" Grid.Row="1" FontSize="20" Margin="2" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
         <Image Source="Pic/send-mail.png" Grid.Row="2" Grid.Column="0" Margin="30"/>
         <TextBox x:Name="txtTopic" Grid.Row="1" Grid.Column="1" Margin="10" Foreground="#FFB359E7"/>
         <TextBox x:Name="txtMessage" Grid.Row="2" Grid.Column="1" Margin="10"/>

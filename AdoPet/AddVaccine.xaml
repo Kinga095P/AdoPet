@@ -1,0 +1,85 @@
+﻿<Window x:Class="AdoPet.AddVaccine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdoPet"
+        mc:Ignorable="d"
+        Title="Details" Height="450" Width="800" Style="{DynamicResource GlobalFont}">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.55"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Szczepienie" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+        <Label Content="Wykonane szczepienia" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+        <Label Content="" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+        <Label Content="Nazwa szczepionki" Grid.Row="2" Grid.Column="0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Amatic SC" />
+        <Label Content="Data zaszczepienia" Grid.Row="3" Grid.Column="0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+        <Label Content="Data kolejnego szczepienia" Grid.Row="4" Grid.Column="0" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+        <Button x:Name="btnAddVacine" Content="Dodaj szczepienie" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="60,10" Background="#FF520E79" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="txtNameVaccine" Grid.Row="2" Grid.Column="1" Margin="15"/>
+        <TextBox x:Name="txtDateNextVaccine" Grid.Column="1" Grid.Row="4" Margin="15"/>
+        <DatePicker x:Name="dpVaccinesDate" Grid.Row="3" Grid.Column="1" Margin="15"/>
+        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" >
+            <TextBox x:Name="txtComments" BorderBrush="#FF520E79" Margin="10" HorizontalContentAlignment="Center"/>
+            <TextBlock IsHitTestVisible="False" Text="Wpisz uwagi dotyczące szczepienia" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,23,187,0" Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=txtComments}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </Grid>
+        <DataGrid Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nazwa szczepionki"/>
+                <DataGridTextColumn Header="Data zaszczepienia"/>
+                <DataGridTextColumn Header="Data kolejnego szczepienia"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edytuj" Background="#FF520E79" Foreground="White"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

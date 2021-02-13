@@ -6,6 +6,22 @@
         xmlns:local="clr-namespace:AdoPet"
         mc:Ignorable="d"
         Title="AddPet" Height="450" Width="800" Style="{DynamicResource GlobalFont}">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Pic/bluegradient.jpg" Opacity="0.6"/>
@@ -42,7 +58,7 @@
                 <ImageBrush ImageSource="/Pic/bluegradient.jpg"/>
             </Button.Background>
         </Button>
-        <TextBox x:Name="txtType" Grid.Column="1" Grid.Row="1" Margin="5" BorderBrush="#FFB359E7"/>
+        <TextBox x:Name="txtType" Grid.Column="1" Grid.Row="1" Margin="5" BorderBrush="#FFB359E7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="2" Margin="5" BorderBrush="#FFB359E7"/>
         <TextBox x:Name="txtAge" Grid.Column="1" Grid.Row="3" Margin="5" BorderBrush="#FFB359E7"/>
         <TextBox x:Name="txtWeight" Grid.Column="1" Grid.Row="6" Margin="5" BorderBrush="#FFB359E7"/>

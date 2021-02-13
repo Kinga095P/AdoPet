@@ -36,6 +36,8 @@ C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.genrunt
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.g.cs
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.baml
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.csprojAssemblyReference.cache
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Details.g.cs
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Details.baml
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddVaccine.g.cs
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddVaccine.baml
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionDetails.g.cs
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionDetails.baml

@@ -23,39 +23,57 @@ namespace AdoPet
         {
             InitializeComponent();
         }
+       
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-            string[] recipients = txtAddres.Text.Split(',');
-            SmtpClient client = new System.Net.Mail.SmtpClient
-            {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                UseDefaultCredentials = false,
-                Credentials = new System.Net.NetworkCredential("notifications.petadopter@gmail.com", "Petadopter123A")
-            };
-            string from = "Powiadomienie PETAdopter";
-            string subject = txtTopic.Text;
-            string body = txtMessage.Text;
-            MailMessage message = new MailMessage();
-            message.From = new MailAddress("notifications.petadopter@gmail.com");
-            message.Subject = subject;
-            message.Body = body;
-            
-            for (int i=0;i<recipients.Length;i++)
-            {
-                message.To.Add(new MailAddress(recipients[i].Trim().ToString()));       
-            }
             try
             {
-                client.Send(message);
-                MessageBox.Show("Wiadomość została poprawnie wysłana");
+                if (string.IsNullOrEmpty(txtAddres.Text))
+                {
+                    MessageBox.Show("Proszę uzupełnić adresata");
+                }
+                else if (string.IsNullOrEmpty(txtTopic.Text))
+                {
+                    MessageBox.Show("Proszę uzupełnić temat");
+                }
+                else if (string.IsNullOrEmpty(txtMessage.Text))
+                {
+                    MessageBox.Show("Proszę uzupełnić treść wiadomości");
+                }
+                else
+                {
+                    string[] recipients = txtAddres.Text.Split(',');
+                    SmtpClient client = new System.Net.Mail.SmtpClient
+                    {
+                        Host = "smtp.gmail.com",
+                        Port = 587,
+                        EnableSsl = true,
+                        UseDefaultCredentials = false,
+                        Credentials = new System.Net.NetworkCredential("notifications.petadopter@gmail.com", "Petadopter123A")
+                    };
+                    string from = "Powiadomienie PETAdopter";
+                    string subject = txtTopic.Text;
+                    string body = txtMessage.Text;
+                    MailMessage message = new MailMessage();
+                    message.From = new MailAddress("notifications.petadopter@gmail.com");
+                    message.Subject = subject;
+                    message.Body = body;
+
+                    for (int i = 0; i < recipients.Length; i++)
+                    {
+                        message.To.Add(new MailAddress(recipients[i].Trim().ToString()));
+                    }
+                    MessageBox.Show("Wiadomość została wysłana poprawnie");
+                  
+                }
+
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Wystąpił błąd przy wysyłaniu wiadomości");
+                MessageBox.Show("Nie udało się wysłać wiadoności");
             }
+
         }
     }
 }
