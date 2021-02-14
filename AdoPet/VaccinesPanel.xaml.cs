@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdoPet.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -32,38 +33,46 @@ namespace AdoPet
         {
             e.Column.Visibility = Visibility.Collapsed;
         }
-        public List<PetVaccine> LoadVaccines()
-        {
-            List<PetVaccine> vaccineList = new List<PetVaccine>();
-            DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
-            var dane = dataBase.SelectQuery("SELECT * FROM Vaccines");
-            foreach (DataRow dr in dane)
-            {
-                PetVaccine petvaccine= new PetVaccine();
-                petvaccine.ID = int.Parse(dr["ID"].ToString());
-                petvaccine.Name = dr["Name"].ToString();        
-                petvaccine.ValidInMonths = int.Parse(dr["ValidInMonths"].ToString());
-                vaccineList.Add(petvaccine);
-            }
-            return vaccineList;
-        }
+        
         public void RefreshVaccines()
         {
-            List<PetVaccine> refreshedList = LoadVaccines();
+            List<PetVaccine> refreshedList = Utils.LoadVaccines();
             dgVaccines.ItemsSource = refreshedList;
 
         }
         private void btnAddVaccine_Click(object sender, RoutedEventArgs e)
         {
-            DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
-            string query = @"INSERT INTO Vaccines (Name, ValidInMonths) VALUES (@name,@validinmonths)";
-            List<SqlParameter> sqlParameters = new List<SqlParameter>()
+            try
+            {
+            
+                if (string.IsNullOrEmpty(txtVaccine.Text))
+                {
+                    MessageBox.Show("Proszę podać nazwę szczepionki");
+                }
+                else if (string.IsNullOrEmpty(txtMonth.Text))
+                {
+                    MessageBox.Show("Proszę podać datę ważności szczepionki");
+                }
+                else
+                {
+                    DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
+                    string query = @"INSERT INTO Vaccines (Name, ValidInMonths) VALUES (@name,@validinmonths)";
+                    List<SqlParameter> sqlParameters = new List<SqlParameter>()
             {
                 new SqlParameter("@name",SqlDbType.NVarChar){Value=txtVaccine.Text},
-                new SqlParameter("@validinmonths", SqlDbType.Int){Value=int.Parse(txtMonth.Text)}    
+                new SqlParameter("@validinmonths", SqlDbType.Int){Value=int.Parse(txtMonth.Text)}
             };
-            dataBase.ExecuteQuery(query, sqlParameters);
-            RefreshVaccines();
+                    dataBase.ExecuteQuery(query, sqlParameters);
+                    RefreshVaccines();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił nieoczekiwany błąd");
+            }
+
+
+
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -82,7 +91,6 @@ namespace AdoPet
            
 
         }
-
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             PetVaccine pv = (PetVaccine)dgVaccines.SelectedItem;

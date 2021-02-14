@@ -64,7 +64,7 @@
                 </TextBlock>
             </Grid>
             <Grid Grid.Row="2" Grid.Column="0" >
-                <TextBox x:Name="txtMonth" Grid.Column="0" Grid.Row="2" Margin="15,20,15,20" BorderBrush="#FFB359E7"/>
+                <TextBox x:Name="txtMonth" Grid.Column="0" Grid.Row="2" Margin="15,20,15,20" BorderBrush="#FFB359E7" VerticalContentAlignment="Center" />
                 <TextBlock IsHitTestVisible="False" Text="Podaj ważność szczepionki w miesiącach" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="DarkGray">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">

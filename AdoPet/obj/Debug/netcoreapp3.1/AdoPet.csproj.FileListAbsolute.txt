@@ -10,7 +10,11 @@ C:\Users\Kinga\source\repos\AdoPet\AdoPet\bin\Debug\netcoreapp3.1\runtimes\win-x
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.csprojAssemblyReference.cache
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddPet.g.cs
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddVaccine.g.cs
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionDetails.g.cs
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.g.cs
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Calculator.g.cs
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Email.g.cs
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\MenuPanel.g.cs
@@ -19,7 +23,11 @@ C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\VaccinesPanel.
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet_MarkupCompile.cache
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet_MarkupCompile.lref
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\App.baml
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddPet.baml
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddVaccine.baml
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionDetails.baml
+C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.baml
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Calculator.baml
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\Email.baml
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\MenuPanel.baml
@@ -33,11 +41,3 @@ C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.csproj.
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.dll
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.pdb
 C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.genruntimeconfig.cache
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.g.cs
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionForm.baml
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoPet.csprojAssemblyReference.cache
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\App.baml
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddVaccine.g.cs
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AddVaccine.baml
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionDetails.g.cs
-C:\Users\Kinga\source\repos\AdoPet\AdoPet\obj\Debug\netcoreapp3.1\AdoptionDetails.baml

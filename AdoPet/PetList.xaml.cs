@@ -137,7 +137,8 @@ namespace AdoPet
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddVaccine addVaccine = new AddVaccine();
+            Animal animal = (Animal)dataGrid.SelectedItem;
+            AddVaccine addVaccine = new AddVaccine(animal);
             addVaccine.Owner = this;
             addVaccine.Show();
         }
