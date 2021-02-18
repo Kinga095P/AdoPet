@@ -9,5 +9,6 @@ namespace AdoPet
         public int ID { get; set; }
         public string Name { get; set; }
         public int ValidInMonths {get;set;}
+        public DateTime RemovalDate { get; set; }
     }
 }

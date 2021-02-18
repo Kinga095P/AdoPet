@@ -64,11 +64,23 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEdit" Content="Edytuj" Background="#FF520E79" Foreground="White" Click="btnEdit_Click_1"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnDelete" Content="Usuń" Background="#FF520E79" Foreground="White" Click="btnDelete_Click_1" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAdd" Content="Dodaj zwierzę do bazy" Margin="10,15,568,15"  Foreground="#FFF7F7F7" FontSize="16" FontWeight="Bold" Grid.Row="2" Click="btnAdd_Click" Background="#FF520E79"/>
-        <Button x:Name="btnEdit" Content="Edytuj zwierzę" Margin="273,15,297,15" Grid.Row="2"  Foreground="#FFF7F7F7" Background="#FF520E79" FontSize="16" FontWeight="Bold" Click="btnEdit_Click"/>
-        <Button x:Name="btnDelete" Content="Usuń zwierzę z bazy" Margin="545,15,10,15"  Foreground="#FFF7F7F7" Background="#FF520E79" FontSize="16" FontWeight="Bold" Grid.Row="2" Click="btnDelete_Click"/>
+        <Button x:Name="btnAdd" Content="Dodaj zwierzę do bazy" Margin="558,15,20,15"  Foreground="#FFF7F7F7" FontSize="16" FontWeight="Bold" Grid.Row="2" Click="btnAdd_Click" Background="#FF520E79"/>
         <Button x:Name="btnPrint" Content="Drukuj listę zwierząt" Grid.Row="0"  HorizontalAlignment="Left" Margin="20,20,0,20" Width="134" Click="btnPrint_Click" BorderBrush="#FF520E79" Background="#FF520E79" Foreground="White"/>
         <Grid Grid.Row="0" Grid.Column="0" >
             <TextBox x:Name="txtSearch" Grid.Row="0" FontSize="14" Margin="511,15,15,15" Background="#FFF6F6F6" TextChanged="txtSearch_TextChanged" VerticalContentAlignment="Center"/>

@@ -43,7 +43,7 @@
         <Button Grid.Column="1"  Grid.RowSpan="2" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}"/>
         <Label Content="Pies" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25"/>
         <Label Content="Waga zwierzaka" Grid.Column="2" Grid.Row="0" FontSize="25" HorizontalAlignment="Center" Foreground="#FFB359E7" FontWeight="Bold" />
-        <TextBox x:Name="txbWeight" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FFB359E7" Width="219" BorderBrush="#FFB359E7"/>
+        <TextBox x:Name="txbWeight" Grid.Row="1" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="#FFB359E7" Width="219" BorderBrush="#FFB359E7" Margin="15"/>
         <GroupBox Header="Wiek" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10" BorderBrush="#FFB359E7" Foreground="Black">
             <StackPanel>
                 <RadioButton x:Name="rbJunior" Margin="5">Junior</RadioButton>
@@ -62,6 +62,6 @@
             <Image Source="Pic/calculator.png" />
         </Button>
         <Label Content="Dzienne zapotrzebowanie karmy" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#FFB359E7" FontWeight="Bold"/>
-        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  x:Name="txbResult" FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,10" Width="200"  Foreground="#FFB359E7" FontWeight="Bold"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  x:Name="txbResult" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" Width="200"  Foreground="#FFB359E7" FontWeight="Bold"/>
     </Grid>
 </Window>

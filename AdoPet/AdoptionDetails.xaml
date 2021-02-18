@@ -21,14 +21,14 @@
         </Grid.RowDefinitions>
         <Label Content="Szczegóły dotyczące adopcji" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Foreground="White" FontWeight="Bold"/>
         <TextBlock x:Name="txbPetName" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="White" FontWeight="Bold"/>
-        <DataGrid x:Name="dataGridDetails" Grid.Row="1" Grid.ColumnSpan="2" Margin="60,0">
+        <DataGrid x:Name="dgDetails" Grid.Row="1" Grid.ColumnSpan="2" Margin="60,0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Data adopcji" Binding="{Binding DateAdoption}"/>
-                <DataGridTextColumn Header="Imię" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Surrname}"/>
-                <DataGridTextColumn Header="Adres" Binding="{Binding Address}" />
-                <DataGridTextColumn Header="Telefon" Binding="{Binding PhoneNumber}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Data adopcji" Binding="{Binding DateAdoption}" Width="*"/>
+                <DataGridTextColumn Header="Imię" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Surrname}" Width="*"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding Address}" Width="*"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding PhoneNumber}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Zamknij szczegóły" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="200,15,200,15" Click="Button_Click" Background="#FF520E79" Foreground="White" FontSize="16" FontWeight="Bold"/>

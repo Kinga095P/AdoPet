@@ -13,6 +13,7 @@ namespace AdoPet
         public int Gender { get; set; }
         public double Weight { get; set; }
         public Pet ID { get; internal set; }
+        public DateTime RemovalDate { get; set; }
 
         public Pet()
         {

@@ -101,7 +101,8 @@ namespace AdoPet
 
         private void Image_PreviewMouseLeftButtonUp_5(object sender, MouseButtonEventArgs e)
         {
-            AdoptionForm adoptionForm = new AdoptionForm();
+            Animal animal = new Animal();
+            AdoptionForm adoptionForm = new AdoptionForm(animal);
             adoptionForm.Owner = this;
             adoptionForm.Show();
         }

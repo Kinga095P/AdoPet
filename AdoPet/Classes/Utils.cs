@@ -12,7 +12,8 @@ namespace AdoPet.Classes
         {
             List<PetVaccine> vaccineList = new List<PetVaccine>();
             DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
-            var dane = dataBase.SelectQuery("SELECT * FROM Vaccines");
+            var dane = dataBase.SelectQuery("SELECT * FROM Vaccines WHERE RemovalDate IS NULL");
+            
             foreach (DataRow dr in dane)
             {
                 PetVaccine petvaccine = new PetVaccine();
@@ -52,6 +53,50 @@ namespace AdoPet.Classes
 
             }
             return petVaccineList;
+        }
+        public static List<Animal> LoadAnimals(string query = "SELECT * FROM Animal", List<SqlParameter> parameters = null)
+        {
+            List<Animal> animalList = new List<Animal>();
+            DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
+            var dane = dataBase.SelectQuery(query, parameters);
+            foreach (DataRow dr in dane)
+            {
+                Animal animal = new Animal();
+                animal.ID = int.Parse(dr["ID"].ToString());
+                animal.Type = dr["Type"].ToString();
+                animal.Name = dr["Name"].ToString();
+                animal.Age = int.Parse(dr["Age"].ToString());
+                animal.Sex = int.Parse(dr["Sex"].ToString());
+                animal.Weight = int.Parse(dr["Weight"].ToString());
+                animal.Activity = int.Parse(dr["Activity"].ToString());
+                animal.Vaccines = bool.Parse(dr["Vaccines"].ToString());
+                animal.Sterilization = bool.Parse(dr["Sterilization"].ToString());
+                animal.ChildFriendly = bool.Parse(dr["ChildFriendly"].ToString());
+                animal.Trained = bool.Parse(dr["Trained"].ToString());
+                animal.AcceptCats = bool.Parse(dr["AcceptCats"].ToString());
+                animal.AcceptDogs = bool.Parse(dr["AcceptDogs"].ToString());
+                animalList.Add(animal);
+            }
+            return animalList;
+        }
+        public static List<Adoption> LoadAnimalsAdopter(string query = "SELECT * FROM Adoptions", List<SqlParameter> parameters = null)
+        {
+            List<Adoption> adopterList = new List<Adoption>();
+            DataBase dataBase = new DataBase("LAPTOP-N5V21FUT\\SQLEXPRESS", "AdoPetDB");
+            var dane = dataBase.SelectQuery(query, parameters);
+            foreach (DataRow dr in dane)
+            {
+                Adoption adoption = new Adoption();
+                adoption.DateAdoption = DateTime.Parse(dr["DateAdoption"].ToString());
+                adoption.PetName = dr["PetName"].ToString();
+                adoption.Name = dr["Name"].ToString();
+                adoption.Surname = dr["Surname"].ToString();
+                adoption.Address = dr["Address"].ToString();
+                adoption.PhoneNumber = dr["PhoneNumber"].ToString();
+                adoption.Email = dr["Email"].ToString();
+                adopterList.Add(adoption);
+            }
+            return adopterList;
         }
     }
 }

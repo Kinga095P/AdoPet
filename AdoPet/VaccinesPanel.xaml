@@ -34,6 +34,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -47,7 +48,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btnDelete" Content="Usuń" Margin="15,20,15,20" Background="#FF520E79" Foreground="White" FontSize="16" Click="btnDelete_Click" FontWeight="Bold" />
+            <Label Content="Słownik szczepień" Margin="15,20,15,20"  Foreground="White" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Grid Grid.Row="1" Grid.Column="0" >
                 <TextBox VerticalContentAlignment="Center" x:Name="txtVaccine"  Margin="15,20,15,20" BorderBrush="#FFB359E7"/>
                 <TextBlock IsHitTestVisible="False" Text="Podaj nazwę szczepionki" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="DarkGray">
@@ -78,8 +79,8 @@
                     </TextBlock.Style>
                 </TextBlock>
             </Grid>
-            
-            <Button x:Name="btnAddVaccine" Content="Dodaj szczepienie" Grid.Column="1" Grid.Row="3" Margin="15,20,15,20" Foreground="White" BorderBrush="#FFB359E7" Background="#FF520E79" FontSize="16" Click="btnAddVaccine_Click" FontWeight="Bold"/>
+            <Button x:Name="btnEditVaccine" Content="Edytuj" Grid.Row="3" Margin="15,20,0,20" Foreground="White" BorderBrush="#FFB359E7" Background="#FF520E79" FontSize="16"  FontWeight="Bold" HorizontalAlignment="Left" Width="135"/>
+            <Button x:Name="btnAddVaccine" Content="Dodaj" Grid.Row="3" Margin="172,20,0,20" Foreground="White" BorderBrush="#FFB359E7" Background="#FF520E79" FontSize="16" Click="btnAddVaccine_Click" FontWeight="Bold" HorizontalAlignment="Left" Width="135"/>
         </Grid>
         <DataGrid x:Name="dgVaccines" ItemsSource="{Binding PetVaccine}" Margin="15">
             <DataGrid.Columns>
@@ -90,6 +91,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="btnEdit" Content="Edytuj" Click="btnEdit_Click" Background="#FF520E79" Foreground="White"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="2*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnDelete" Content="Usuń"  Background="#FF520E79" Foreground="White" Click="btnDelete_Click_1"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
